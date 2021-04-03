@@ -304,28 +304,30 @@ function lookLeft(Numbers, Head)
     var totalHeadMovements = 0;
     var distance = 0;
 
-    for (var i = 0; i < rightLength; i++)
-    {
-        seekAddressedRight.push(rightArray[i]);
-    }
+    seekAddressedLeft.push(parseInt(Head));
     for (var i = leftLength - 1; i >= 0; i--)
     {
         seekAddressedLeft.push(leftArray[i]);
     }
-
-    var seekAddressedLeft = seekAddressedLeft.length;
-
     for (var i = 0; i < rightLength; i++)
     {
-        var currentTrack = rightArray[i];
+        seekAddressedLeft.push(rightArray[i]);
+    }
+
+    var seekAddressedLength = seekAddressedLeft.length;
+    seekCountSequenceLeft.push(0);
+
+    for (var i = leftLength - 1; i >= 0; i--)
+    {
+        var currentTrack = leftArray[i];
         distance = Math.abs(currentTrack - Head);
         totalHeadMovements += distance;
         seekCountSequenceLeft.push(totalHeadMovements);
         Head = currentTrack;
     }
-    for (var i = leftLength - 1; i >= 0; i--)
+    for (var i = 0; i < rightLength; i++)
     {
-        var currentTrack = leftArray[i];
+        var currentTrack = rightArray[i];
         distance = Math.abs(currentTrack - Head);
         totalHeadMovements += distance;
         seekCountSequenceLeft.push(totalHeadMovements);
