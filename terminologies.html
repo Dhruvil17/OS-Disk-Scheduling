@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html style="scroll-behavior: smooth">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+
+    <title>Operating System</title>
+
+    <link rel="stylesheet" type="text/css" href="homestyle.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <style>
+        hr {
+            border: 1px solid #00458b;
+            border-radius: 25px;
+        }
+    </style>
+
+</head>
+
+<body id="page-top" style="scroll-behavior: smooth; text-decoration: none; outline: none">
+    <div id="particles-js">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="index.html" style="font-size: 20px; font-weight: 550">Home</a>
+        </nav>
+        <div class="title">
+            <h1 class="mb-5">SOME BASIC TERMINOLOGIES</h1>
+            <div class="btn col-md-8">
+                <a class="btn btn-outline-primary col-md-5" href="index_Disk.html">Disk Scheduling</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <br><br>
+        <h4>Magnetic Disks</h4>
+        <p style="font-size: 18px"> In modern computers, most of the secondary storage is in the form of magnetic disks.The basic structure of magnetic disk is depicted as below:</p>
+        <img src="https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/images/Chapter10/10_01_DiskMechanism.jpg" style="margin-left: auto; margin-right: auto; display: block; width: 50%;">
+        <hr>
+        <h4>Why Disk Scheduling </h4>
+        <p style="font-size: 18px">As we know, a process needs two type of time, CPU time and IO time. For I/O, it requests the Operating system to access the disk.<br> However, the operating system must be fare enough to satisfy each request and at the same time, operating system
+            must maintain the efficiency and speed of process execution.<br> So, Disk Scheduling can be defined as the techinique that operating system uses to schedule I/O requests arriving for the disk.</p>
+        <hr>
+        <h4>Goals of Disk Scheduling</h4>
+        <p style="font-size: 18px">
+            <ul>
+                <li>Fairness</li>
+                <li>High throughout</li>
+                <li>Minimal traveling head time</li>
+            </ul>
+        </p>
+        <hr>
+        <h4>Seek Time</h4>
+        <p style="font-size: 18px">Seek time is the time taken in locating the disk arm to a specified track where the read/write request will be satisfied.</p>
+        <hr>
+        <h4>Rotational Latency</h4>
+        <p>It is the time taken by the desired sector to rotate itself to the position from where it can access the R/W heads.</p>
+        <hr>
+        <h4>Transfer Time</h4>
+        <p style="font-size: 18px"> It refers to the time taken to transfer the data.</p>
+        <hr>
+        <h4>Disk Access Time</h4>
+        <p style="font-size: 18px">Disk access time is given as, sum of Rotational Latency, Seek Time and Transfer Time<br>i.e Disk Access Time = Rotational Latency + Seek Time + Transfer Time</p>
+        <hr>
+        <h4>Disk Response Time</h4>
+        <p style="font-size: 18px">It is the average of time spent by each request waiting for the IO operation.</p>
+        <hr>
+        <h4>Disk Scheduling Algorithms</h4>
+        <p style="font-size: 18px">The list of various disks scheduling algorithm is given below. Each algorithm is carrying some advantages and disadvantages. <br> The limitation of each algorithm leads to the evolution of a new algorithm.
+        </p>
+        <ul>
+            <li>FCFS scheduling algorithm</li>
+            <li>SSTF (shortest seek time first) algorithm</li>
+            <li>SCAN scheduling</li>
+            <li>C-SCAN scheduling</li>
+            <li>LOOK Scheduling</li>
+            <li>C-LOOK scheduling</li>
+        </ul>
+    </div>
+
+
+
+</body>
+<script src="particles.js"></script>
+<script src="app.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>

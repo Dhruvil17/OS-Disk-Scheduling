@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Look - Explanation</title>
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+</head>
+
+<body style="scroll-behavior: smooth; text-decoration: none; outline: none">
+    <div id="particles-js">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="index.html" style="font-size: 20px; font-weight: 550">Home</a
+    >
+    <a
+          class="navbar-brand"
+          href="index_Disk.html"
+          style="font-size: 20px; font-weight: 550"
+          >Algorithms</a
+    >
+    <a class="navbar-brand" href="Disk-Algos/diskGraph.html" style="font-size: 20px; font-weight: 550"
+     >Graph</a
+    >
+
+    <button
+     class="navbar-toggler"
+     type="button"
+     data-toggle="collapse"
+     data-target="#navbarColor01"
+     aria-controls="navbarColor01"
+     aria-expanded="false"
+     aria-label="Toggle navigation"
+    >
+     <span class="navbar-toggler-icon"></span>
+    </button>
+   </nav>
+   <br />
+
+   <div class="title">
+    <h1 class="mb-5">CONCEPT - LOOK ALGORITHM</h1>
+    <div class="btn col-md-8">
+        <a class="btn btn-outline-primary col-md-4" href="Disk-Algos/disk_algo5.html">Algorithm</a>
+    </div>
+    </div>
+    </div>
+
+    <br />
+    <br />
+    <div class="container">
+        <h1 class="display-3 text-dark font-weight-bold text-align-center" style="font-family: 'Roboto', sans-serif">
+            Look
+        </h1>
+        <hr class="my-4" />
+        <p style="font-size: 18px; font-weight: 550; color: #555">
+            It is similar to the SCAN disk scheduling algorithm except for the difference that the disk arm in spite of going to the end of the disk goes only to the last request to be serviced in front of the head and then reverses its direction from there only.
+            Thus it prevents the extra delay which occurred due to unnecessary traversal to the end of the disk.
+        </p>
+        <p style="font-size: 18px; font-weight: 550; color: #555">
+            Given an array of disk track numbers and initial head position, our task is to find the total number of seek operations done to access all the requested tracks if LOOK disk scheduling algorithm is used. Also, write a program to find the seek sequence
+            using LOOK disk scheduling algorithm.</p>
+        <p style="font-size: 18px; font-weight: 550; color: #555">
+            </br>Input:
+            </br>Request sequence = {176, 79, 34, 60, 92, 11, 41, 114}
+            </br>Initial head position = 50
+            <br>Direction = right (We are moving from left to right)
+
+            </br>Output:
+            </br>Initial position of head: 50
+            </br>Total number of seek operations = 291
+            </br>Seek Sequence is
+            </br>60
+            </br>79
+            </br>92
+            </br>114
+            </br>176
+            </br>41
+            </br>34
+            </br>11
+            <p style="font-size: 18px; font-weight: 550; color: #555">
+                The following chart shows the sequence in which requested tracks are serviced using LOOK.
+            </p>
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20190830184834/fcfs-1.png" />
+            <p style="font-size: 18px; font-weight: 550; color: #555">
+                </br>Therefore, the total seek count is calculated as:
+                </br>= (60-50)+(79-60)+(92-79) +(114-92)+(176-114) +(176-41)+(41-34)+(34-11)
+                <br><br>
+    </div>
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

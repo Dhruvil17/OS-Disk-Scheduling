@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>C-Look - Explanation</title>
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+</head>
+
+<body style="scroll-behavior: smooth; text-decoration: none; outline: none">
+    <div id="particles-js">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="index.html" style="font-size: 20px; font-weight: 550">Home</a
+    >
+    <a
+          class="navbar-brand"
+          href="index_Disk.html"
+          style="font-size: 20px; font-weight: 550"
+          >Algorithms</a
+        >
+        <a class="navbar-brand" href="Disk-Algos/diskGraph.html" style="font-size: 20px; font-weight: 550"
+        >Graph</a
+       >
+    <button
+     class="navbar-toggler"
+     type="button"
+     data-toggle="collapse"
+     data-target="#navbarColor01"
+     aria-controls="navbarColor01"
+     aria-expanded="false"
+     aria-label="Toggle navigation"
+    >
+     <span class="navbar-toggler-icon"></span>
+    </button>
+   </nav>
+   <br />
+
+   <div class="title">
+    <h1 class="mb-5">CONCEPT - C-LOOK ALGORITHM</h1>
+    <div class="btn col-md-8">
+      <a class="btn btn-outline-primary col-md-4" href="Disk-Algos/disk_algo6.html">Algorithm</a>
+    </div>
+    </div>
+    </div>
+
+    <br />
+    <br />
+    <div class="container">
+        <h1 class="display-3 text-dark font-weight-bold text-align-center" style="font-family: 'Roboto', sans-serif">
+            C-Look
+        </h1>
+        <hr class="my-4" />
+        <p style="font-size: 18px; font-weight: 550; color: #555">
+
+            As LOOK is similar to SCAN algorithm, in a similar way, CLOOK is similar to CSCAN disk scheduling algorithm. In CLOOK, the disk arm in spite of going to the end goes only to the last request to be serviced in front of the head and then from there goes
+            to the other end’s last request. Thus, it also prevents the extra delay which occurred due to unnecessary traversal to the end of the disk.
+        </p>
+        <p style="font-size: 18px; font-weight: 550; color: #555">
+            In this algorithm, the head services requests only in one direction(either left or right) until all the requests in this direction are not serviced and then jumps back to the farthest request on the other direction and service the remaining requests which
+            gives a better uniform servicing as well as avoids wasting seek time for going till the end of the disk.
+        </p>
+        <p style="font-size: 18px; font-weight: 550; color: #555">
+            </br>Example
+
+            </br>Input:
+            </br>Request sequence = {176, 79, 34, 60, 92, 11, 41, 114}
+            </br>Initial head position = 50
+            </br>Direction = right (Moving from left to right)
+            </br>Output:
+            </br>Initial position of head: 50
+            </br>Total number of seek operations = 156
+            </br>Seek Sequence is
+            </br>60
+            </br>79
+            </br>92
+            </br>114
+            </br>176
+            </br>11
+            </br>34
+            </br>41 </p>
+        <p style="font-size: 18px; font-weight: 550; color: #555">The following chart shows the sequence in which requested tracks are serviced using C-LOOK.</p>
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20190912194433/fcfs-3.jpg" />
+        <p style="font-size: 18px;font-weight: 550; color: #555">
+            Therefore, the total seek count = (60 – 50) + (79 – 60) + (92 – 79) + (114 – 92) + (176 – 114) + (176 – 11) + (34 – 11) + (41 – 34) = 321
+        </p>
+        <br><br>
+    </div>
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
