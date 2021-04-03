@@ -29,7 +29,7 @@ function Calculate() {
     inputNumbers.unshift(inputHeadPos);
 
     //Remove duplicates
-    inputNumbers = inputNumbers.filter(function(item, pos) {
+    inputNumbers = inputNumbers.filter(function (item, pos) {
         return inputNumbers.indexOf(item) == pos;
     });
 
@@ -61,88 +61,175 @@ function Calculate() {
         });
     }
 
-    var fcfsSeekTime = fcfs(inputNumbers, inputHeadPos);
-    var sstfSeekTime = sstf(inputNumbers, inputHeadPos);
-    var scanSeekTime = scan(inputNumbers, inputHeadPos);
-    var lookSeekTime = look(inputNumbers, inputHeadPos);
-    var cscanSeekTime = cscan(inputNumbers, inputHeadPos);
-    var clookSeekTime = clook(inputNumbers, inputHeadPos);
+    console.log(direction);
+    if (direction === "right")
+    {
+        var fcfsSeekTime = fcfs(inputNumbers, inputHeadPos);
+        var sstfSeekTime = sstf(inputNumbers, inputHeadPos);
+        var scanSeekTime = scanRight(inputNumbers, inputHeadPos);
+        var lookSeekTime = lookRight(inputNumbers, inputHeadPos);
+        var cscanSeekTime = cscanRight(inputNumbers, inputHeadPos);
+        var clookSeekTime = clookRight(inputNumbers, inputHeadPos);
 
-
-    // var graphType = document.getElementById("chartType").value;
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['FCFS', 'SSTF', 'SCAN', 'C-SCAN', 'LOOK', 'C-LOOK'],
-            datasets: [{
-                label: 'Comparison Graph Of All Six Algorithms',
-                data: [fcfsSeekTime, sstfSeekTime, scanSeekTime, cscanSeekTime, lookSeekTime, clookSeekTime],
-                backgroundColor: [
-                    'rgba(0,178,255, 0.8)',
-                    'rgba(0,255,230, 0.8)',
-                    'rgba(0,229,255, 0.8)',
-                    'rgba(0,178,255, 0.8)',
-                    'rgba(0,127,255, 0.8)',
-                    'rgba(0,76,255, 0.8)'
-                ],
-                borderColor: [
-                    'rgba(0,178,255, 1)',
-                    'rgba(0,255,230, 1)',
-                    'rgba(0,229,255, 1)',
-                    'rgba(0,178,255, 1)',
-                    'rgba(0,127,255, 1)',
-                    'rgba(0,76,255, 1)'
-                ],
-                borderWidth: 2
-            }]
-        },
-        options: {
-            tooltips: {
-                enabled: true
-            },
-            hover: {
-                animationDuration: 1
-            },
-            animation: {
-                duration: 1,
-                onComplete: function() {
-                    var chartInstance = this.chart,
-                        ctx = chartInstance.ctx;
-                    ctx.textAlign = 'center';
-                    ctx.fillStyle = "#003b55";
-                    ctx.textBaseline = 'bottom';
-                    // Loop through each data in the datasets
-                    this.data.datasets.forEach(function(dataset, i) {
-                        var meta = chartInstance.controller.getDatasetMeta(i);
-                        meta.data.forEach(function(bar, index) {
-                            var data = dataset.data[index];
-                            ctx.fillText(data, bar._model.x, bar._model.y - 5);
-                        });
-                    });
-                }
-            },
-
-            scales: {
-                xAxes: [{
-                    /* For changing color of x-axis coordinates */
-                    ticks: {
-                        fontSize: 18,
-                        padding: 0,
-                        fontColor: '#003b55'
-                    }
-                }],
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true,
-                        fontSize: 18,
-                        padding: 0,
-                        fontColor: '#003b55'
-                    }
+        // var graphType = document.getElementById("chartType").value;
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['FCFS', 'SSTF', 'SCAN', 'C-SCAN', 'LOOK', 'C-LOOK'],
+                datasets: [{
+                    label: 'Comparison Graph Of All Six Algorithms',
+                    data: [fcfsSeekTime, sstfSeekTime, scanSeekTime, cscanSeekTime, lookSeekTime, clookSeekTime],
+                    backgroundColor: [
+                        'rgba(0,178,255, 0.8)',
+                        'rgba(0,255,230, 0.8)',
+                        'rgba(0,229,255, 0.8)',
+                        'rgba(0,178,255, 0.8)',
+                        'rgba(0,127,255, 0.8)',
+                        'rgba(0,76,255, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(0,178,255, 1)',
+                        'rgba(0,255,230, 1)',
+                        'rgba(0,229,255, 1)',
+                        'rgba(0,178,255, 1)',
+                        'rgba(0,127,255, 1)',
+                        'rgba(0,76,255, 1)'
+                    ],
+                    borderWidth: 2
                 }]
+            },
+            options: {
+                tooltips: {
+                    enabled: true
+                },
+                hover: {
+                    animationDuration: 1
+                },
+                animation: {
+                    duration: 1,
+                    onComplete: function() {
+                        var chartInstance = this.chart,
+                            ctx = chartInstance.ctx;
+                        ctx.textAlign = 'center';
+                        ctx.fillStyle = "#003b55";
+                        ctx.textBaseline = 'bottom';
+                        // Loop through each data in the datasets
+                        this.data.datasets.forEach(function(dataset, i) {
+                            var meta = chartInstance.controller.getDatasetMeta(i);
+                            meta.data.forEach(function(bar, index) {
+                                var data = dataset.data[index];
+                                ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                            });
+                        });
+                    }
+                },
+
+                scales: {
+                    xAxes: [{
+                        /* For changing color of x-axis coordinates */
+                        ticks: {
+                            fontSize: 18,
+                            padding: 0,
+                            fontColor: '#003b55'
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            fontSize: 18,
+                            padding: 0,
+                            fontColor: '#003b55'
+                        }
+                    }]
+                }
             }
-        }
-    });
+        });
+    }
+    else
+    {
+        var fcfsSeekTime = fcfs(inputNumbers, inputHeadPos);
+        var sstfSeekTime = sstf(inputNumbers, inputHeadPos);
+        var scanSeekTime = scanLeft(inputNumbers, inputHeadPos);
+        var lookSeekTime = lookLeft(inputNumbers, inputHeadPos);
+        var cscanSeekTime = cscanLeft(inputNumbers, inputHeadPos);
+        var clookSeekTime = clookLeft(inputNumbers, inputHeadPos);
+
+        // var graphType = document.getElementById("chartType").value;
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['FCFS', 'SSTF', 'SCAN', 'C-SCAN', 'LOOK', 'C-LOOK'],
+                datasets: [{
+                    label: 'Comparison Graph Of All Six Algorithms',
+                    data: [fcfsSeekTime, sstfSeekTime, scanSeekTime, cscanSeekTime, lookSeekTime, clookSeekTime],
+                    backgroundColor: [
+                        'rgba(0,178,255, 0.8)',
+                        'rgba(0,255,230, 0.8)',
+                        'rgba(0,229,255, 0.8)',
+                        'rgba(0,178,255, 0.8)',
+                        'rgba(0,127,255, 0.8)',
+                        'rgba(0,76,255, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(0,178,255, 1)',
+                        'rgba(0,255,230, 1)',
+                        'rgba(0,229,255, 1)',
+                        'rgba(0,178,255, 1)',
+                        'rgba(0,127,255, 1)',
+                        'rgba(0,76,255, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                tooltips: {
+                    enabled: true
+                },
+                hover: {
+                    animationDuration: 1
+                },
+                animation: {
+                    duration: 1,
+                    onComplete: function() {
+                        var chartInstance = this.chart,
+                            ctx = chartInstance.ctx;
+                        ctx.textAlign = 'center';
+                        ctx.fillStyle = "#003b55";
+                        ctx.textBaseline = 'bottom';
+                        // Loop through each data in the datasets
+                        this.data.datasets.forEach(function(dataset, i) {
+                            var meta = chartInstance.controller.getDatasetMeta(i);
+                            meta.data.forEach(function(bar, index) {
+                                var data = dataset.data[index];
+                                ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                            });
+                        });
+                    }
+                },
+
+                scales: {
+                    xAxes: [{
+                        /* For changing color of x-axis coordinates */
+                        ticks: {
+                            fontSize: 18,
+                            padding: 0,
+                            fontColor: '#003b55'
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            fontSize: 18,
+                            padding: 0,
+                            fontColor: '#003b55'
+                        }
+                    }]
+                }
+            }
+        });
+    }
 }
 
 function showError(errorMessage, msg) {
@@ -218,8 +305,10 @@ function sstf(Numbers, Head)
     return totalHeadMovements;
 }
 
+//Algorithms for RIGHT Direction (Towards Higher Values)
+
 //SCAN or Elevator SCAN Algorithm
-function scan(Numbers, Head)
+function scanRight(Numbers, Head)
 {
     var leftArray = [];
     var rightArray = [];
@@ -271,7 +360,7 @@ function scan(Numbers, Head)
 }
 
 //LOOK Algorithm
-function look(Numbers, Head)
+function lookRight(Numbers, Head)
 {
     Numbers.shift();
     var leftArray = [];
@@ -322,7 +411,7 @@ function look(Numbers, Head)
 }
 
 //C-SCAN Algorithm
-function cscan(Numbers, Head)
+function cscanRight(Numbers, Head)
 {
     var leftArray = [];
     var rightArray = [];
@@ -380,7 +469,7 @@ function cscan(Numbers, Head)
 }
 
 //C-LOOK Algorithm
-function clook(Numbers, Head)
+function clookRight(Numbers, Head)
 {
     var leftArray = [];
     var rightArray = [];
@@ -426,6 +515,243 @@ function clook(Numbers, Head)
         for (var i = 0; i < leftLength; i++)
         {
             var currentTrack = leftArray[i];
+            distance = Math.abs(currentTrack - Head);
+            totalHeadMovements += distance;
+            Head = currentTrack;
+        }
+    }
+    return totalHeadMovements;
+}
+
+//Algorithms for Left Direction (Towards Lower Values)
+
+//SCAN or Elevator SCAN Algorithm
+function scanLeft(Numbers, Head)
+{
+    var leftArray = [];
+    var rightArray = [];
+    var totalNumbers = Numbers.length;
+
+    leftArray.push(0);
+
+    for (var i = 0; i < totalNumbers; i++)
+    {
+        Numbers[i] = parseInt(Numbers[i]);
+    }
+
+    for (var i = 0; i < totalNumbers; i++)
+    {
+        if (Numbers[i] < Head)
+        {
+            leftArray.push(Numbers[i]);
+        }
+        if(Numbers[i] > Head)
+        {
+            rightArray.push(Numbers[i]);
+        }
+    }
+    leftArray.sort(function (a, b)
+    {
+        return a - b;
+    })
+
+    rightArray.sort(function (a, b)
+    {
+        return a - b;
+    })
+
+    var leftLength = leftArray.length;
+    var rightLength = rightArray.length;
+    var totalHeadMovements = 0;
+    var distance = 0;
+
+    for (var i = leftLength - 1; i >= 0; i--)
+    {
+        var currentTrack = leftArray[i];
+        distance = Math.abs(currentTrack - Head);
+        totalHeadMovements += distance;
+        Head = currentTrack;
+    }
+    for (var i = 0; i < rightLength; i++)
+    {
+        var currentTrack = rightArray[i];
+        distance = Math.abs(currentTrack - Head);
+        totalHeadMovements += distance;
+        Head = currentTrack;
+    }
+    return totalHeadMovements;
+}
+
+//LOOK Algorithm
+function lookLeft(Numbers, Head)
+{
+    var leftArray = [];
+    var rightArray = [];
+    var totalNumbers = Numbers.length;
+
+    for (var i = 0; i < totalNumbers; i++)
+    {
+        Numbers[i] = parseInt(Numbers[i]);
+    }
+
+    for (var i = 0; i < totalNumbers; i++)
+    {
+        if (Numbers[i] < Head)
+        {
+            leftArray.push(Numbers[i]);
+        }
+        else
+        {
+            rightArray.push(Numbers[i]);
+        }
+    }
+    leftArray.sort(function (a, b)
+    {
+        return a - b;
+    })
+
+    rightArray.sort(function (a, b)
+    {
+        return a - b;
+    })
+
+    var leftLength = leftArray.length;
+    var rightLength = rightArray.length;
+    var totalHeadMovements = 0;
+    var distance = 0;
+
+    for (var i = leftLength - 1; i >= 0; i--)
+    {
+        var currentTrack = leftArray[i];
+        distance = Math.abs(currentTrack - Head);
+        totalHeadMovements += distance;
+        Head = currentTrack;
+    }
+    for (var i = 0; i < rightLength; i++)
+    {
+        var currentTrack = rightArray[i];
+        distance = Math.abs(currentTrack - Head);
+        totalHeadMovements += distance;
+        Head = currentTrack;
+    }
+    return totalHeadMovements;
+}
+
+//C-SCAN Algorithm
+function cscanLeft(Numbers, Head)
+{
+    var leftArray = [];
+    var rightArray = [];
+    var totalNumbers = Numbers.length;
+
+    leftArray.push(0);
+    rightArray.push(199);
+
+    for (var i = 0; i < totalNumbers; i++)
+    {
+        Numbers[i] = parseInt(Numbers[i]);
+    }
+
+    for (var i = 0; i < totalNumbers; i++)
+    {
+        if(Numbers[i] < Head)
+        {
+            leftArray.push(Numbers[i]);
+        }
+        if(Numbers[i] > Head)
+        {
+            rightArray.push(Numbers[i]);
+        }
+    }
+    leftArray.sort(function (a, b)
+    {
+        return a - b;
+    })
+
+    rightArray.sort(function (a, b)
+    {
+        return a - b;
+    })
+
+    var leftLength = leftArray.length;
+    var rightLength = rightArray.length;
+    var totalHeadMovements = 0;
+    var distance = 0;
+
+    for (var i = leftLength - 1; i >=0 ; i--)
+    {
+        var currentTrack = leftArray[i];
+        distance = Math.abs(currentTrack - Head);
+        totalHeadMovements += distance;
+        Head = currentTrack;
+    }
+    Head = 199;
+    totalHeadMovements += 199;
+    if (rightLength != 0)
+    {
+        for (var i = rightLength - 1; i >=0 ; i--)
+        {
+            var currentTrack = rightArray[i];
+            distance = Math.abs(currentTrack - Head);
+            totalHeadMovements += distance;
+            Head = currentTrack;
+        }
+    }
+    return totalHeadMovements;
+}
+
+//C-LOOK Algorithm
+function clookLeft(Numbers, Head)
+{
+    var leftArray = [];
+    var rightArray = [];
+    var totalNumbers = Numbers.length;
+
+    for (var i = 0; i < totalNumbers; i++)
+    {
+        Numbers[i] = parseInt(Numbers[i]);
+    }
+
+    for (var i = 0; i < totalNumbers; i++)
+    {
+        if (Numbers[i] < Head)
+        {
+            leftArray.push(Numbers[i]);
+        }
+        if(Numbers[i] > Head)
+        {
+            rightArray.push(Numbers[i]);
+        }
+    }
+    leftArray.sort(function (a, b)
+    {
+        return a - b;
+    })
+
+    rightArray.sort(function (a, b)
+    {
+        return a - b;
+    })
+
+    var leftLength = leftArray.length;
+    var rightLength = rightArray.length;
+    var totalHeadMovements = 0;
+    var distance = 0;
+
+    for (var i = leftLength - 1; i >=0 ; i--)
+    {
+        var currentTrack = leftArray[i];
+        distance = Math.abs(currentTrack - Head);
+        totalHeadMovements += distance;
+        Head = currentTrack;
+    }
+    totalHeadMovements += Math.abs(Head - rightArray[rightLength - 1]);
+    Head = rightArray[rightLength - 1];
+    if (rightLength != 0)
+    {
+        for (var i = rightLength - 1; i >= 0; i--)
+        {
+            var currentTrack = rightArray[i];
             distance = Math.abs(currentTrack - Head);
             totalHeadMovements += distance;
             Head = currentTrack;
