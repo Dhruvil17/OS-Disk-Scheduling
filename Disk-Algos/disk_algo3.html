@@ -161,12 +161,16 @@
                             Calculate
                         </button>
                     </div>
+                    <br />
                 </div>
                 <div id="errorMessage"></div>
                 <br />
             </div>
             <div class="canvas">
                 <canvas id="line-chart"></canvas>
+                <button type="submit" class="btn btn-primary print printChart">
+                    Download Chart
+                </button>
             </div>
             <div id="count-output"></div>
         </div>
@@ -221,6 +225,11 @@
         <div class="container">
             <script src="./../particles.js"></script>
             <script src="./../app.js"></script>
+
+            <!--For Printing Chart-->
+            <script src="https://cdn.jsdelivr.net/npm/jspdf@1.5.3/dist/jspdf.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         </div>
     </body>
 </html>

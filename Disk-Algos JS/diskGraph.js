@@ -72,7 +72,7 @@ function Calculate() {
         var clookSeekTime = clookRight(inputNumbers, inputHeadPos);
 
         // var graphType = document.getElementById("chartType").value;
-        var ctx = document.getElementById('myChart').getContext('2d');
+        var ctx = document.getElementById('bar-chart').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
@@ -146,7 +146,7 @@ function Calculate() {
             }
         });
     }
-    else
+    if(direction === "left")
     {
         var fcfsSeekTime = fcfs(inputNumbers, inputHeadPos);
         var sstfSeekTime = sstf(inputNumbers, inputHeadPos);
@@ -156,7 +156,7 @@ function Calculate() {
         var clookSeekTime = clookLeft(inputNumbers, inputHeadPos);
 
         // var graphType = document.getElementById("chartType").value;
-        var ctx = document.getElementById('myChart').getContext('2d');
+        var ctx = document.getElementById('bar-chart').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
@@ -230,7 +230,25 @@ function Calculate() {
             }
         });
     }
+
+    if (direction === "left" || direction === "right")
+    {
+        document.querySelector(".canvas button").classList.add("printChart");
+        document.querySelector(".printChart").style.visibility = "initial";
+        document.querySelector(".printChart").addEventListener("click", function () {
+            printImage();
+        });   
+    }
 }
+
+function printImage()
+{
+    var canvas = document.querySelector("#bar-chart");
+    var canvas_img = canvas.toDataURL("image/png",1.0);
+    var pdf = new jsPDF('landscape','in', 'letter');
+    pdf.addImage(canvas_img, 'png', .5, 1.75, 10, 5);
+    pdf.save('All Algorithms Comparison Chart.pdf');
+};
 
 function showError(errorMessage, msg) {
     errorMessage.classList.add('alert');

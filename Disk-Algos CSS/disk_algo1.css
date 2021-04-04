@@ -88,6 +88,13 @@ label {
   margin: 10px;
 }
 
+.printChart {
+  position: absolute;
+  left: 990px;
+  margin-top: 35px;
+  visibility: hidden;
+}
+
 input#inputHeadPos {
   display: inline;
   width: 50px;

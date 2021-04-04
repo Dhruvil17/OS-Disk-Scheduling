@@ -88,6 +88,17 @@ label {
   margin: 10px;
 }
 
+.printChart {
+  position: absolute;
+  left: 980px;
+  margin-top: 25px;
+  visibility: hidden;
+}
+
+.canvas {
+  padding-bottom: 70px;
+}
+
 #userInputDirection {
   position: relative;
   width: 22%;

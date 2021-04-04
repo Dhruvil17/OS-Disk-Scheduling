@@ -122,7 +122,22 @@ function Calculate()
             }
         }
     });
+
+    document.querySelector(".canvas button").classList.add("printChart");
+    document.querySelector(".printChart").style.visibility = "initial";
+    document.querySelector(".printChart").addEventListener("click", function () {
+        printImage();
+    });
 }
+
+function printImage()
+{
+    var canvas = document.querySelector("#line-chart");
+    var canvas_img = canvas.toDataURL("image/png",1.0);
+    var pdf = new jsPDF('landscape','in', 'letter');
+    pdf.addImage(canvas_img, 'png', .5, 1.75, 10, 5);
+    pdf.save('FCFS Chart.pdf');
+};
 
 function showError(errorMessage, msg)
 {
