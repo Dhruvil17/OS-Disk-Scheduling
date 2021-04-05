@@ -36,6 +36,30 @@
                     style="font-size: 20px; font-weight: 550"
                     >Graph</a
                 >
+                <a
+                    class="navbar-brand ml-auto"
+                    href="https://geektech1717.blogspot.com/2020/05/scan-disk-scheduling-operating-system.html?m=1"
+                    style="
+                        font-size: 20px;
+                        font-weight: 550;
+                        position: absolute;
+                        right: 20px;
+                        top: 10px;
+                    "
+                    >Blog</a
+                >
+                <a
+                    class="navbar-brand ml-auto"
+                    href="https://www.youtube.com/watch?v=xouo556RGiE&list=PLxCzCOWd7aiGz9donHRrE9I3Mwn6XdP8p&index=77"
+                    style="
+                        font-size: 20px;
+                        font-weight: 550;
+                        position: absolute;
+                        right: 100px;
+                        top: 10px;
+                    "
+                    >Tutorial</a
+                >
 
                 <button
                     class="navbar-toggler"
@@ -52,7 +76,8 @@
             <br />
 
             <div class="title">
-                <h1 class="mb-5">CONCEPT - Elevator SCAN or SCAN</h1>
+                <h1 class="mb-5">CONCEPT - Elevator SCAN or SCAN Algorithm</h1>
+                <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/ef-o5jV4Ib8?start=0&end=83" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <div class="btn col-md-8">
                     <a
                         class="btn btn-outline-primary col-md-4"
@@ -66,72 +91,61 @@
         <br />
         <br />
         <div class="container">
-            <h1
-                class="display-3 text-dark font-weight-bold text-align-center"
-                style="font-family: 'Roboto', sans-serif"
-            >
-                Elevator SCAN Algorithm
-            </h1>
-            <hr class="my-4" />
-            <p style="font-size: 18px; font-weight: 550; color: #555">
-                The elevator algorithm (also SCAN) is a disk-scheduling
-                algorithm to determine the motion of the disk's arm and head in
-                servicing read and write requests.
-            </p>
+            <section class="w3l-homeblock3">
+                <div class="midd-w3 py-5">
+                    <div class="container py-lg-5 py-md-3">
+                        <div class="row">
+                            <div class="col-lg-6 ">
+                                <img src="assets/images/scan.jpg" alt="" class="radius-image img-fluid">
+                            </div>
+                            <div class="col-lg-6 mt-lg-0 mt-3 about-right-faq align-self">
+                                <h3 class="title-big">Elevator SCAN Algorithm</h3>
+                                
+                                <p class="mt-3">The elevator algorithm (also SCAN) is a disk-scheduling
+                                    algorithm to determine the motion of the disk's arm and head in
+                                    servicing read and write requests.</p>
+                                    
+                                <p class="mt-3">In SCAN algorithm the disk arm moves into a particular direction
+                                    and services the requests coming in its path and after reaching
+                                    the end of disk, it reverses its direction and again services
+                                    the request arriving in its path. So, this algorithm works as an
+                                    elevator and hence also known as elevator algorithm. As a
+                                    result, the requests at the midrange are serviced more and those
+                                    arriving behind the disk arm will have to wait.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            <p style="font-size: 18px; font-weight: 550; color: #555">
-                In SCAN algorithm the disk arm moves into a particular direction
-                and services the requests coming in its path and after reaching
-                the end of disk, it reverses its direction and again services
-                the request arriving in its path. So, this algorithm works as an
-                elevator and hence also known as elevator algorithm. As a
-                result, the requests at the midrange are serviced more and those
-                arriving behind the disk arm will have to wait.
-            </p>
-
-            <hr class="my-4" />
-
-            <hr class="my-4" />
-
-            <h2
-                class="dispthelay-3 text-dark font-weight-bold"
-                style="font-family: 'Roboto', sans-serif"
-            >
-                Advantages of SCAN (Elevator) algorithm
-            </h2>
-            <hr class="my-4" />
-            <p style="font-size: 18px; font-weight: 550; color: #555">
-                1. This algorithm is simple and easy to understand.<br />
-                2. SCAN algorithm have no starvation.<br />
-                3. This algorithm is better than FCFS Scheduling algorithm
-                <br />
-            </p>
-
-            <hr class="my-4" />
-
-            <hr class="my-4" />
-
-            <h2
-                class="dispthelay-3 text-dark font-weight-bold"
-                style="font-family: 'Roboto', sans-serif"
-            >
-                Disadvantages of SCAN (Elevator) algorithm
-            </h2>
-            <hr class="my-4" />
-            <p style="font-size: 18px; font-weight: 550; color: #555">
-                1. More complex algorithm to implement.<br />
-                2. This algorithm is not fair because it cause long waiting time
-                for the cylinders just visited by the head.<br />
-                3. It causes the head to move till the end of the disk in this
-                way the requests arriving ahead of the arm position would get
-                immediate service but some other requests that arrive behind the
-                arm position will have to wait for the request to complete.
-                <br />
-            </p>
-
-            <hr class="my-4" />
-
-            <hr class="my-4" />
+            <section class="w3l-homeblock3">
+                <div class="midd-w3 py-5">
+                    <div class="container py-lg-5 py-md-3">
+                        <div class="row">
+                            <div class="col-lg-6 mt-lg-0 mt-3 about-right-faq align-self">
+                                <h3 class="title-big">Advantages: </h3>
+                                <ul class="w3l-lists mt-4">
+                                    <li><span class="fa fa-check" aria-hidden="true"></span>This algorithm is simple and easy to understand.</li>
+                                    <li><span class="fa fa-times" aria-hidden="true">SCAN algorithm have no starvation.</span></li>
+                                    <li><span class="fa fa-times" aria-hidden="true">This algorithm is better than FCFS Scheduling algorithm</span></li>
+                                    <br>
+                                <h3 class="title-big">DisAdvantages: </h3>
+                                    <li><span class="fa fa-times" aria-hidden="true"></span>More complex algorithm to implement.</li>
+                                    <li><span class="fa fa-times" aria-hidden="true"></span>This algorithm is not fair because it cause long waiting time
+                                        for the cylinders just visited by the head.</li>
+                                    <li><span class="fa fa-times" aria-hidden="true"></span>It causes the head to move till the end of the disk in this
+                                        way the requests arriving ahead of the arm position would get
+                                        immediate service but some other requests that arrive behind the
+                                        arm position will have to wait for the request to complete.</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 ">
+                                <img src="assets/images/scan2.png" alt="" class="radius-image img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <h2
                 class="dispthelay-3 text-dark font-weight-bold"

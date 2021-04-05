@@ -23,6 +23,30 @@
         <a class="navbar-brand" href="Disk-Algos/diskGraph.html" style="font-size: 20px; font-weight: 550"
         >Graph</a
        >
+       <a
+                    class="navbar-brand ml-auto"
+                    href="https://geektech1717.blogspot.com/2020/06/c-look-disk-scheduling-algorithm.html?m=1"
+                    style="
+                        font-size: 20px;
+                        font-weight: 550;
+                        position: absolute;
+                        right: 20px;
+                        top: 10px;
+                    "
+                    >Blog</a
+                >
+                <a
+                    class="navbar-brand ml-auto"
+                    href="https://www.youtube.com/watch?v=gwCgG5ORXW8&list=PLxCzCOWd7aiGz9donHRrE9I3Mwn6XdP8p&index=80"
+                    style="
+                        font-size: 20px;
+                        font-weight: 550;
+                        position: absolute;
+                        right: 100px;
+                        top: 10px;
+                    "
+                    >Tutorial</a
+                >
     <button
      class="navbar-toggler"
      type="button"
@@ -38,7 +62,9 @@
    <br />
 
    <div class="title">
-    <h1 class="mb-5">CONCEPT - C-LOOK ALGORITHM</h1>
+    <h1 class="mb-5">CONCEPT - Circular-LooK (C-LOOK) Algorithm</h1>
+    <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/s8Xbrpkw6oY?start=50&end=113" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
     <div class="btn col-md-8">
       <a class="btn btn-outline-primary col-md-4" href="Disk-Algos/disk_algo6.html">Algorithm</a>
     </div>
@@ -48,21 +74,29 @@
     <br />
     <br />
     <div class="container">
-        <h1 class="display-3 text-dark font-weight-bold text-align-center" style="font-family: 'Roboto', sans-serif">
-            C-LOOK
-        </h1>
-        <hr class="my-4" />
-        <p style="font-size: 18px; font-weight: 550; color: #555">
+        <section class="w3l-homeblock3">
+            <div class="midd-w3 py-5">
+                <div class="container py-lg-5 py-md-3">
+                    <div class="row">
+                        <div class="col-lg-6 ">
+                            <img src="assets/images/clook.jpg" alt="" class="radius-image img-fluid">
+                        </div>
+                        <div class="col-lg-6 mt-lg-0 mt-3 about-right-faq align-self">
+                            <h3 class="title-big">C-LOOK Algorithm</h3>
+                            
+                            <p class="mt-3">As LOOK is similar to SCAN algorithm, in a similar way, CLOOK is similar to CSCAN disk scheduling algorithm. In CLOOK, the disk arm in spite of going to the end goes only to the last request to be serviced in front of the head and then from there goes
+                                to the other end’s last request. Thus, it also prevents the extra delay which occurred due to unnecessary traversal to the end of the disk.</p>
+                                
+                            <p class="mt-3">In this algorithm, the head services requests only in one direction(either left or right) until all the requests in this direction are not serviced and then jumps back to the farthest request on the other direction and service the remaining requests which
+                                gives a better uniform servicing as well as avoids wasting seek time for going till the end of the disk.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            As LOOK is similar to SCAN algorithm, in a similar way, CLOOK is similar to CSCAN disk scheduling algorithm. In CLOOK, the disk arm in spite of going to the end goes only to the last request to be serviced in front of the head and then from there goes
-            to the other end’s last request. Thus, it also prevents the extra delay which occurred due to unnecessary traversal to the end of the disk.
-        </p>
         <p style="font-size: 18px; font-weight: 550; color: #555">
-            In this algorithm, the head services requests only in one direction(either left or right) until all the requests in this direction are not serviced and then jumps back to the farthest request on the other direction and service the remaining requests which
-            gives a better uniform servicing as well as avoids wasting seek time for going till the end of the disk.
-        </p>
-        <p style="font-size: 18px; font-weight: 550; color: #555">
-            </br>Example
+            <b>Example</b>
 
             </br>Input:
             </br>Request sequence = {176, 79, 34, 60, 92, 11, 41, 114}

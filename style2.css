@@ -27,8 +27,8 @@
 }
 .title{
 	position: absolute;
-	top: 40%;
-	left: 27%;
+	top: 20%;
+	left: 20%;
 	color: #fff;
 }
 .title h1{
@@ -41,7 +41,8 @@
 }
 .btn{
 	position: absolute;
-	left: 8%;
+	margin: 35%;
+ 	margin-left: 15%;
 }
 .btn a{
 	margin: 0 5px;
@@ -52,4 +53,9 @@
 .container p{
 	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
+}
+.video{
+	position: absolute;
+ left: 20%;
+ top: 10%;
 }

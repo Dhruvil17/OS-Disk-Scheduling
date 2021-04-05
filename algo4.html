@@ -36,6 +36,30 @@
                     style="font-size: 20px; font-weight: 550"
                     >Graph</a
                 >
+                <a
+                    class="navbar-brand ml-auto"
+                    href="https://geektech1717.blogspot.com/2020/05/c-scan-disk-scheduling-operating-system.html?m=1"
+                    style="
+                        font-size: 20px;
+                        font-weight: 550;
+                        position: absolute;
+                        right: 20px;
+                        top: 10px;
+                    "
+                    >Blog</a
+                >
+                <a
+                    class="navbar-brand ml-auto"
+                    href="https://www.youtube.com/watch?v=vLqZ6ZMBkX8&list=PLxCzCOWd7aiGz9donHRrE9I3Mwn6XdP8p&index=79"
+                    style="
+                        font-size: 20px;
+                        font-weight: 550;
+                        position: absolute;
+                        right: 100px;
+                        top: 10px;
+                    "
+                    >Tutorial</a
+                >
 
                 <button
                     class="navbar-toggler"
@@ -52,7 +76,8 @@
             <br />
 
             <div class="title">
-                <h1 class="mb-5">CONCEPTS - Circular SCAN</h1>
+                <h1 class="mb-5">CONCEPTS - Circular SCAN (C-SCAN) Algorithm</h1>
+                <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/no0PeEl5Uso?start=0&end=49" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <div class="btn col-md-8">
                     <a
                         class="btn btn-outline-primary col-md-4"
@@ -66,58 +91,65 @@
         <br />
         <br />
         <div class="container">
-            <h1
-                class="display-3 text-dark font-weight-bold text-align-center"
-                style="font-family: 'Roboto', sans-serif"
-            >
-                Circular SCAN Algorithm
-            </h1>
-            <hr class="my-4" />
-            <p style="font-size: 18px; font-weight: 550; color: #555">
-                In the SCAN algorithm, the disk arm again scans the path that
-                has been scanned, after reversing its direction. So, it may be
-                possible that too many requests are waiting at the other end or
-                there may be zero or few requests pending at the scanned area.
-            </p>
+            <section class="w3l-homeblock3">
+                <div class="midd-w3 py-5">
+                    <div class="container py-lg-5 py-md-3">
+                        <div class="row">
+                            <div class="col-lg-6 ">
+                                <img src="assets/images/cscan.jpg" alt="" class="radius-image img-fluid">
+                            </div>
+                            <div class="col-lg-6 mt-lg-0 mt-3 about-right-faq align-self">
+                                <h3 class="title-big">Circular SCAN Algorithm</h3>
+                                
+                                <p class="mt-3">In the SCAN algorithm, the disk arm again scans the path that
+                                    has been scanned, after reversing its direction. So, it may be
+                                    possible that too many requests are waiting at the other end or
+                                    there may be zero or few requests pending at the scanned area.</p>
+                                    
+                                <p class="mt-3">These situations are avoided in the CSCAN algorithm in which the
+                                    disk arm instead of reversing its direction goes to the other
+                                    end of the disk and starts servicing the requests from there.
+                                    So, the disk arm moves in a circular fashion and this algorithm
+                                    is also similar to the SCAN algorithm and hence it is known as
+                                    C-SCAN (Circular SCAN).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            <p style="font-size: 18px; font-weight: 550; color: #555">
-                These situations are avoided in the CSCAN algorithm in which the
-                disk arm instead of reversing its direction goes to the other
-                end of the disk and starts servicing the requests from there.
-                So, the disk arm moves in a circular fashion and this algorithm
-                is also similar to the SCAN algorithm and hence it is known as
-                C-SCAN (Circular SCAN).
-            </p>
-            <hr class="my-4" />
-            <hr class="my-4" />
+            <section class="w3l-homeblock3">
+                <div class="midd-w3 py-5">
+                    <div class="container py-lg-5 py-md-3">
+                        <div class="row">
+                            <div class="col-lg-6 mt-lg-0 mt-3 about-right-faq align-self">
+                                <h3 class="title-big"> What is C-SCAN (Circular Elevator) Disk Scheduling Algorithm?</h3>
+                                <p class="mt-3">Circular SCAN (C-SCAN) scheduling algorithm is a modified
+                                    version of SCAN disk scheduling algorithm that deals with the
+                                    inefficiency of SCAN algorithm by servicing the requests more
+                                    uniformly. Like SCAN (Elevator Algorithm) C-SCAN moves the head
+                                    from one end servicing all the requests to the other end.
+                                    However, as soon as the head reaches the other end, it
+                                    immediately returns to the beginning of the disk without
+                                    servicing any requests on the return trip (see chart below) and
+                                    starts servicing again once reaches the beginning. This is also
+                                    known as the “Circular Elevator Algorithm” as it essentially
+                                    treats the cylinders as a circular list that wraps around from
+                                    the final cylinder to the first one.</p>
+                            </div>
+                            <div class="col-lg-6 ">
+                                <img src="assets/images/fourthsection.jpg" alt="" class="radius-image img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+           
             <h2
                 class="dispthelay-3 text-dark font-weight-bold"
                 style="font-family: 'Roboto', sans-serif"
             >
-                What is C-SCAN (Circular Elevator) Disk Scheduling Algorithm?
-            </h2>
-
-            <br />
-            <p style="font-size: 18px; font-weight: 550; color: #555">
-                Circular SCAN (C-SCAN) scheduling algorithm is a modified
-                version of SCAN disk scheduling algorithm that deals with the
-                inefficiency of SCAN algorithm by servicing the requests more
-                uniformly. Like SCAN (Elevator Algorithm) C-SCAN moves the head
-                from one end servicing all the requests to the other end.
-                However, as soon as the head reaches the other end, it
-                immediately returns to the beginning of the disk without
-                servicing any requests on the return trip (see chart below) and
-                starts servicing again once reaches the beginning. This is also
-                known as the “Circular Elevator Algorithm” as it essentially
-                treats the cylinders as a circular list that wraps around from
-                the final cylinder to the first one.
-            </p>
-            <h2
-                class="dispthelay-3 text-dark font-weight-bold"
-                style="font-family: 'Roboto', sans-serif"
-            >
-                <hr class="my-4" />
-                <hr class="my-4" />
                 Algorithm:
             </h2>
             <ol style="font-size: 18px; font-weight: 550; color: #555">
