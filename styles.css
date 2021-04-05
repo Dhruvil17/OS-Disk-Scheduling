@@ -82,7 +82,21 @@
     letter-spacing: 1px;
     text-transform: uppercase;
   }
-  
+  .navbar-brand{
+    font-family: 'Roboto', sans-serif;
+  }
+  .navbar-brand::after{
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #fff;
+    transition: width 0.3s;
+  }
+  .navbar-brand:hover::after{
+    width: 100%;
+    transition: width 0.3s;
+  }
   
   
   @media(max-width:360px){

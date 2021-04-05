@@ -3,8 +3,6 @@
 *{
 	margin: 0;
 	padding: 0;
-	/* font-family: Open Sans; */
-	font-family: 'Roboto', sans-serif;
 }
 #particles-js{
 	height: 100vh;
@@ -12,10 +10,25 @@
 	background-position: center;
 	background-size: cover;
 }
+.navbar-brand{
+	font-family: 'Roboto', sans-serif;
+}
+.navbar-brand::after{
+	content: '';
+	display: block;
+	height: 2px;
+	width: 0;
+	background: #fff;
+	transition: width 0.3s;
+}
+.navbar-brand:hover::after{
+	width: 100%;
+	transition: width 0.3s;
+}
 .title{
 	position: absolute;
 	top: 40%;
-	left: 25%;
+	left: 26%;
 	color: #fff;
 }
 .title h1{
@@ -35,4 +48,13 @@
 	color: #fff;
 	font-size: 1.2rem;
 	font-family: 'Roboto', sans-serif;
+}
+.container p{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+}
+.video{
+	position: absolute;
+ left: 20%;
+ top: 10%;
 }
